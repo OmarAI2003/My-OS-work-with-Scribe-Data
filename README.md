@@ -1,6 +1,6 @@
 # MLH Software Engineering Code Sample
 
-This README showcases my contributions to the scribe open-source project. Below are examples of pull requests I worked on, with links and summaries of each.
+This README showcases my contributions to the [scribe-data open-source project](https://github.com/scribe-org/Scribe-Data). Below are examples of pull requests I worked on, with links and summaries of each.
 
 ---
 
