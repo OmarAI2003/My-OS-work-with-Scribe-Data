@@ -49,3 +49,49 @@ This README showcases my contributions to the scribe open-source project. Below 
   - Strengthens code reliability with comprehensive unit tests for the new feature.  
 
 **_________________________________________________________________________________________________________________________________________________**
+
+
+
+## Workflow: SPARQL Query Validation
+
+### Overview  
+This workflow introduces extensive validation for SPARQL queries to ensure accuracy and adherence to metadata-driven standards. It focuses on variable order, QID validation, optional statements, and docstring consistency.
+
+### Objectives  
+- Validate and enforce proper order of variables in `SELECT` and `WHERE` clauses.  
+- Ensure alignment of QIDs in optional statements with metadata criteria.  
+- Standardize SPARQL docstring formatting.  
+- Maintain consistency in variable order across query components.
+
+### Implementation Details  
+
+1. **Validation of SELECT and WHERE Clause Variable Orders**  
+   - **[PR 1: Check SELECT-WHERE Label Order](https://github.com/scribe-org/Scribe-Data/pull/481)**  
+     - Implemented the `check_forms_order` function to validate that `SELECT` clause variables match their order in the `WHERE` clause.  
+     - Handles labeling services and ensures consistency in variable alignment.  
+
+2. **SPARQL Docstring Validation**  
+   - **[PR 2: Docstring Format Check](https://github.com/scribe-org/Scribe-Data/pull/489)**  
+     - Added the `check_docstring` function to validate SPARQL query docstrings against a predefined format.  
+     - Integrated this validation into the query checking process for better automation.  
+
+3. **Variable Order Based on JSON Metadata**  
+   - **[PR 3: Validate and Sort Variables with Metadata](https://github.com/scribe-org/Scribe-Data/pull/503)**  
+     - Introduced sorting based on `lexeme_forms.json`, prioritizing data type variables, shortest names, and lexicographical order.  
+     - Enhanced the main validation function to include metadata-based checks.  
+
+4. **Optional QID Order Validation**  
+   - **[PR 4: Check Optional QID Order](https://github.com/scribe-org/Scribe-Data/pull/507)**  
+     - Added `check_optional_qid_order` to validate the order of QIDs in optional statements.  
+     - Refactored label decomposition logic into `decompose_label_features` for better code reuse.  
+     - Ensures that optional clause QIDs align with metadata expectations while handling exceptions for duplicate entries.  
+
+### Key Outcomes  
+- **Improved Query Consistency**: Ensures alignment of variables and QIDs with metadata definitions.  
+- **Enhanced Readability**: Validated and standardized docstrings improve code clarity.  
+- **Robust Error Handling**: Identifies mismatches in variable and QID orders, providing clear error messages for resolution.  
+
+### Usage  
+- The validation workflow is integrated into the main query-checking process.  
+- Errors and suggested corrections are logged for review.  
+- Validation scripts can be run as part of CI/CD pipelines or during manual checks.
