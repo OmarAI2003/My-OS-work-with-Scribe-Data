@@ -1,4 +1,4 @@
-# MLH Software Engineering Code Sample
+# Software Engineering Code Sample of my contributions in Scribe (Documented for the purpose of applying to the well-known MLH Fellowship!)
 
 This README showcases my contributions to the [scribe-data open-source project](https://github.com/scribe-org/Scribe-Data). Below are examples of pull requests I worked on, with links and summaries of each.
 
